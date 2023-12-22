@@ -2,7 +2,8 @@ FROM docker:24.0
 
 RUN apk add --no-cache \
     aws-cli \
-    openssl 
+    openssl \
+    git
 
 WORKDIR /
 

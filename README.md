@@ -12,3 +12,15 @@ This action builds, tags, and pushes a Docker image to AWS ECR.
 | IMAGE_REPOSITORY_URL   | AWS ECR Image Repository URL          |
 | IMAGE_TAG              | Docker Image Tag (default: random hash) |
 | PATH_DOCKERFILE        | Dockerfile Path (default: ./Dockerfile) |
+
+## Example Usage
+
+```yaml
+- name: diomalta/aws-ecr-push
+  uses: diomalta/aws-ecr-push@v1.0.2
+  env:
+    AWS_ECR_REGION: ${{ secrets.AWS_ECR_REGION }}
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    IMAGE_REPOSITORY_URL: ${{ secrets.IMAGE_REPOSITORY_URL }}
+```
