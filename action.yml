@@ -1,4 +1,4 @@
-name: "AWS ECR Push"
+name: "@diomalta/aws-ecr-push"
 description: "Pushes a docker image to AWS ECR"
 runs:
   using: "docker"
