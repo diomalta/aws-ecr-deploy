@@ -1,0 +1,5 @@
+name: "AWS ECR Push"
+description: "Pushes a docker image to AWS ECR"
+runs:
+  using: "docker"
+  image: "Dockerfile"

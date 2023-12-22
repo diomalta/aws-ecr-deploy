@@ -1,4 +1,4 @@
-# AWS ECR Deploy
+# Amazon Elastic Container Registry (ECR) Docker Image Push
 
 This action builds, tags, and pushes a Docker image to AWS ECR.
 
