@@ -10,3 +10,5 @@ COPY src/* /bin/
 
 RUN chmod +x /bin/_utils.sh && \
   chmod +x /bin/deploy
+
+CMD ["/bin/deploy"]
