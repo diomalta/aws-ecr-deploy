@@ -47,14 +47,16 @@ then
 fi
 
 log_info "Building docker image"
-docker build --pull -t $DOCKER_IMAGE .${PATH_DOCKERFILE}
-
-throw "Error on build docker image"
+if ! docker build --pull -t $DOCKER_IMAGE .${PATH_DOCKERFILE} 
+then
+  throw "Error on build docker image"
+fi
 
 log_info "Pushing docker image"
-docker push $DOCKER_IMAGE
-
-throw "Error on push docker image"
+if ! docker push $DOCKER_IMAGE
+then
+  throw "Error on push docker image"
+fi
 
 log_success "Docker image pushed"
 echo $DOCKER_IMAGE
