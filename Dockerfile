@@ -10,6 +10,6 @@ WORKDIR /
 COPY src/* /bin/
 
 RUN chmod +x /bin/_utils.sh && \
-  chmod +x /bin/deploy
+  chmod +x /bin/push
 
-CMD ["/bin/deploy"]
+CMD ["/bin/push"]
