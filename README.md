@@ -13,7 +13,7 @@ This action builds, tags, and pushes a Docker image to AWS ECR.
 | IMAGE_TAG              | Docker Image Tag (default: random hash)          |
 | IMAGE_TAG_DEFAULT      | Docker Image Tag Default  (default: latest)      |
 | PATH_DOCKERFILE        | Dockerfile Path (default: ./Dockerfile)          |
-| DOCKER_ARCHITECTURE    | Docker Architecture (default: amd64/arm64)       |
+| DOCKER_ARCHITECTURE    | Docker Architecture (default: linux/amd64)       |
 
 ## Example Usage
 

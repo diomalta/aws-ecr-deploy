@@ -12,5 +12,4 @@ COPY src/* /bin/
 RUN chmod +x /bin/_utils.sh && \
   chmod +x /bin/push
 
-# CMD ["/bin/push"]
-CMD ["/bin/sh"]
+CMD ["/bin/push"]
