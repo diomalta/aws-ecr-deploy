@@ -1,4 +1,4 @@
-FROM docker:24.0
+FROM docker:25.0.1-cli-alpine3.19
 
 RUN apk add --no-cache \
     aws-cli \

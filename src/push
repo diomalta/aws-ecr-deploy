@@ -30,6 +30,11 @@ if [ -z "${IMAGE_REPOSITORY_URL}" ]; then
   exit 1
 fi
 
+if [ -z "${DOCKER_ARCHITECTURE}" ]; then
+  log_warning "DOCKER_ARCHITECTURE is empty. Using default value: linux/amd64,linux/arm64"
+  DOCKER_ARCHITECTURE="${DOCKER_ARCHITECTURE:-linux/amd64,linux/arm64}"
+fi
+
 IMAGE_TAG="${IMAGE_TAG:-$(openssl rand -hex 3)}"
 IMAGE_TAG_DEFAULT="${IMAGE_TAG_DEFAULT:-latest}"
 DOCKER_IMAGE=$IMAGE_REPOSITORY_URL:$IMAGE_TAG
@@ -49,7 +54,7 @@ then
 fi
 
 log_info "Building docker image"
-if ! docker build --pull -t $DOCKER_IMAGE -t $DOCKER_IMAGE_DEFAULT .${PATH_DOCKERFILE} 
+if ! docker buildx build --platform $DOCKER_ARCHITECTURE --pull -t $DOCKER_IMAGE -t $DOCKER_IMAGE_DEFAULT .${PATH_DOCKERFILE} 
 then
   throw "Error on build docker image"
 fi
