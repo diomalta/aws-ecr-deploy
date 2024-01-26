@@ -54,7 +54,9 @@ then
 fi
 
 log_info "Building docker image"
-if ! docker buildx build --platform $DOCKER_ARCHITECTURE --pull -t $DOCKER_IMAGE -t $DOCKER_IMAGE_DEFAULT .${PATH_DOCKERFILE} 
+docker buildx create --use
+
+if ! docker buildx build --force-rm --platform $DOCKER_ARCHITECTURE --pull -t $DOCKER_IMAGE -t $DOCKER_IMAGE_DEFAULT .${PATH_DOCKERFILE} 
 then
   throw "Error on build docker image"
 fi
